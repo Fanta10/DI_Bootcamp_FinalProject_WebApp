@@ -1,0 +1,52 @@
+<table class="table table-striped table-hover mt-3 taille">
+  <thead>
+    <tr>
+      <th scope="col">Code</th>
+      <th scope="col">Libelle</th>
+      <th scope="col">durée</th>
+      <th scope="col">durée restante</th>
+      <th scope="col">montant</th>
+      <th scope="col">statut</th>
+      <th scope="col">Nom Employe</th>
+      <th scope="col">Email Employe</th>
+      <th scope="col">type matériel</th>
+      <th scope="col"> Fournisseur</th>
+      <th scope="col">site Employe</th>
+      <th scope="col">Adresse Mac</th>
+      <th scope="col">Marque</th>
+      <th scope="col">Modele</th>
+      <th scope="col">Entrée stok</th>
+      <th scope="col">Montant</th>
+      <th scope="col">Mise à disposition</th>
+      <th scope="col">Debut garantie</th>
+      <th scope="col">Fin garantie</th>
+      <th scope="col">Bon commande</th>
+      <th scope="col">Bon livraison</th>
+      <th scope="col">Actions</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let materiel as materiels">
+      <td>{{materiel.Code}}</td>
+      <td>{{materiel.Libelle}}</td>
+      <td>{{materiel.dure_}}</td>
+      <td>{{materiel.duree_utilisation}}</td>
+      <td>{{materiel.livraison}}</td>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+      <td colspan="2">Larry the Bird</td>
+
+      <td><button type="submit" class="btn btn-primary">Modifier</button></td>
+      <td><button type="submit" class="btn btn-success">Supprimer</button></td>
+    </tr>
+
+  </tbody>
+</table>

@@ -10,18 +10,18 @@ export class FonctionmaterielService {
   constructor(private httpservice : HttpService) { }
 
   setMateriel(materiel : any) {
-    return this.httpservice.post({endpoint : 'api/materiels',data : materiel});
+    return this.httpservice.post({endpoint : 'v1/materiel',data : materiel});
    }
 
    updateMateriel(materiel : Materiel) {
-     return this.httpservice.put({endpoint : 'api/materiels',data : materiel});
+     return this.httpservice.put({endpoint : 'v1/materiel',data : materiel});
    }
 
    getMateriels() {
-    return this.httpservice.get("api/materiels");
+    return this.httpservice.get("v1/materiel");
    }
 
-   deleteMateriel(id : string) {
-     return this.httpservice.delete(`api/materiels/${id}`);
+   deleteMateriel(id : number) {
+     return this.httpservice.delete(`v1/materiel/${id}`);
    }
 }

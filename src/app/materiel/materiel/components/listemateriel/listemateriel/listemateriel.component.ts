@@ -13,16 +13,45 @@ export class ListematerielComponent implements OnInit{
   constructor(private functionService : FonctionmaterielService){}
 
   ngOnInit(): void {
+    //getAllMateriel(){
+      this.functionService.getMateriels().subscribe((response : any) => {
+        this.materiels = response;
+        console.log(this.materiels);
+
+    });
+  //}
 
 
 
   }
-  getAllMateriel(){
-    this.functionService.getMateriels().subscribe((response : any) => {
-      this.materiels = response;
-      console.log(this.materiels);
+  delete(materiel:Materiel){
+    this.functionService.deleteMateriel(materiel.id).subscribe({
+      next : data => {
+        //console.log(data);
+        alert("succes")
+      },
+      error : error => {
+        console.log(error)
+        alert("error")
+      }
+    });
 
-  });
-}
+
+  }
+
+  edit(materiel: Materiel){
+    this.functionService.updateMateriel(materiel).subscribe({
+      next : data => {
+        console.log(data);
+        alert("succes")
+      },
+      error : error => {
+        console.log(error)
+        alert("error")
+      }
+    });
+
+  }
+
 
 }

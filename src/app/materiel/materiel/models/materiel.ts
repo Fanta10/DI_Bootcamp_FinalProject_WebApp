@@ -1,3 +1,6 @@
+import { BonLivraison } from "./bon-livraison";
+import { TypeMateriel } from "./type-materiel";
+
 export interface Materiel {
   id:number,
   code:String,
@@ -6,12 +9,13 @@ export interface Materiel {
   modele:String,
   montant:number,
   num_serie:String,
-  statut_materiel:String,
-  type_materiel:String,
   duree_utilisation:number,
-  deb_garantie:Date,
+  debut_garantie:Date,
   fin_garantie:Date,
-  date_mise_disposition: Date,
-  mac_address:String,
-  date_enregistrement:Date
+  date_utilisation: Date,
+  localmac_address:String,
+  date_enregistrement:Date,
+  bonLivraison: BonLivraison,
+  typeMateriel: TypeMateriel,
+  statut_materiel: TypeMateriel
 }

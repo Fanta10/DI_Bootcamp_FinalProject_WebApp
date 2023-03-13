@@ -13,16 +13,38 @@ const routes: Routes = [
 //   redirectTo: '',
 //   pathMatch: 'full'
 // },
- {path:'login',
+ {path:'',
   component: LoginComponent
 
  },
 
  {
-  path: '',
+  path: 'home',
   loadChildren: () => import('./materiel/materiel/materiel.module').then(m => m.MaterielModule)
- }
+ },
 //  {path: '**', component:}
+{
+  path: 'home',
+  loadChildren: () => import('./employe/employe/employe.module').then(m => m.EmployeModule)
+},
+{
+  path: 'home',
+  loadChildren: () => import('./affectation/affectation/affectation.module').then(m => m.AffectationModule)
+},
+{
+  path: 'home',
+  loadChildren: () => import('./suivi/suivi/suivi.module').then(m => m.SuiviModule)
+},
+{
+  path: 'home',
+  loadChildren: () => import('./budget/budget/budget.module').then(m => m.BudgetModule)
+},
+{
+  path: 'home',
+  loadChildren: () => import('./dashboard/dashboard/dashboard.module').then(m => m.DashboardModule)
+}
+ 
+ 
 ];
 
 @NgModule({

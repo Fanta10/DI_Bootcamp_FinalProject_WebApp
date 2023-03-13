@@ -2,6 +2,7 @@ import { LayoutCustomerComponent } from './../../layout/layout-customer/layout-c
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreatematerielComponent } from './components/createmateriel/createmateriel.component';
+import { CreateemployeComponent } from 'src/app/employe/employe/components/createemploye/createemploye.component';
 
 const routes: Routes = [
   {
@@ -11,8 +12,8 @@ const routes: Routes = [
       {
         path : 'materiel',
         component : CreatematerielComponent
-      }
-
+      },
+     
     ]
   }
 ];

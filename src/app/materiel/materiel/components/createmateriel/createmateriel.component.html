@@ -42,7 +42,7 @@
             <div class="col-6">
               <div class="mb-3">
                 <label for="serie-name" class="col-form-label">N° serie:</label>
-                <input type="text" class="form-control" id="serie-name">
+                <input type="text" class="form-control" id="serie-name" formControlName="serie">
               </div>
 
             </div>
@@ -57,11 +57,11 @@
             <div class="col-6">
               <div class="mb-3">
                 <label for="serie-name" class="col-form-label">Type Matériel:</label>
-                <select class="form-select" aria-label="Default select example" formControlName="serie">
-                  <option selected>Choisissez un type de matériel</option>
-                  <option value="1">Ordinateur Portable</option>
-                  <option value="2">Materiel Immobilier</option>
-                  <option value="3">Three</option>
+                <select class="form-select" aria-label="Default select example" formControlName="type">
+                  <option selected value="{{type.id}}"  *ngFor="let type of typeMateriels" >{{type.libelle}}</option>
+
+                  <!-- <option value="2">Materiel Immobilier</option>
+                  <option value="3">Three</option> -->
                 </select>
               </div>
 
@@ -70,11 +70,11 @@
               <div class="mb-3">
                 <label for="statut-name" class="col-form-label">Statut Matériel:</label>
                 <select class="form-select" aria-label="Default select example" formControlName="statut">
-                  <option selected>Choisissez statut materiel</option>
-                  <option value="1">En Stock</option>
-                  <option value="2">En Service</option>
+                  <option selected  *ngFor="let stat of statutMateriels" value="{{stat.id}}">{{stat.libelle}}</option>
+
+                  <!-- <option value="2">En Service</option>
                   <option value="3">Obselect</option>
-                  <option value="3">ObseEn Pannelect</option>
+                  <option value="3">ObseEn Pannelect</option> -->
                 </select>
               </div>
             </div>
@@ -125,21 +125,28 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-6">
+            <!-- <div class="col-6">
               <div class="mb-3">
                 <label for="com-name" class="col-form-label">Bon Commande:</label>
                 <input type="number" class="form-control" id="com-name" formControlName="commande">
               </div>
 
-            </div>
+            </div> -->
             <div class="col-6">
               <div class="mb-3">
                 <label for="liv-name" class="col-form-label">Bon Livraison:</label>
-                <input type="number" class="form-control" id="liv-text" formControlName="livraison">
+                <!-- <input type="number" class="form-control" id="liv-text" formControlName="livraison"> -->
+                <select class="form-select" aria-label="Default select example" formControlName="livraison">
+                  <!-- <option selected>Choisissez statut materiel</option> -->
+                  <option value="{{liv.id}}" *ngFor="let liv of bonLivraison">{{liv.numero_livraison}}</option>
+                  <!-- <option value="2">En Service</option>
+                  <option value="3">Obselect</option>
+                  <option value="3">ObseEn Pannelect</option> -->
+                </select>
               </div>
             </div>
           </div>
-          <div class="row">
+          <!-- <div class="row">
             <div class="col-6">
               <div class="mb-3">
                 <label for="fourn-name" class="col-form-label">Fournisseur:</label>
@@ -164,7 +171,7 @@
                 </select>
               </div>
             </div>
-          </div>
+          </div> -->
 
 
 
@@ -178,4 +185,5 @@
     </div>
   </div>
 </div>
+<h2 class="fw-bold text-center text-primary">Liste de Materiels</h2>
 <app-listemateriel></app-listemateriel>
